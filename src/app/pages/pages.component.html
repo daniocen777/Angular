@@ -1,0 +1,47 @@
+<!--NavBar-->
+<app-header></app-header>
+
+<div class="main-container ace-save-state" id="main-container">
+  <script type="text/javascript">
+    try {
+      ace.settings.loadState("main-container");
+    } catch (e) {
+      console.log("ERROR EN APP");
+    }
+  </script>
+  <!--Sidebar-->
+  <div
+    id="sidebar"
+    class="sidebar
+    responsive
+    ace-save-state"
+  >
+    <script type="text/javascript">
+      try {
+        ace.settings.loadState("sidebar");
+      } catch (e) {}
+    </script>
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <!--Contenedor-->
+  <div class="main-content">
+    <div class="main-content-inner">
+      <!--Breadcrumbs-->
+      <app-breadcrumbs></app-breadcrumbs>
+      <!--Contenido de la páginas-->
+      <div class="page-content">
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <router-outlet></router-outlet>
+
+            <!-- PAGE CONTENT ENDS -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>
+  </div>
+</div>
